@@ -1233,6 +1233,16 @@ ul.links {
     line-height: 2.5em;
     padding-left: 0; }
 
+    
+#links {
+  display: flex !important;
+  flex-direction: column !important;
+}
+#links a {
+  line-height: 2.5em;
+  width: fit-content;
+}
+
 /* Icons */
 ul.icons {
   cursor: default;
@@ -1553,6 +1563,10 @@ button,
       #nav > ul > li > ul {
         display: none; }
 
+.links a {
+  line-height: 2.5em;
+  padding: 0px;
+}
 /* Dropotron */
 .dropotron {
   background-image: -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0)), url("bg01.png");
