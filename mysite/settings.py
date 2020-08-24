@@ -1,6 +1,18 @@
 import os  # isort:skip
+
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 gettext = lambda s: s
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'True'
+SECURE_HSTS_SECONDS = 6000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_PRELOAD = True
+
+
 """
 Django settings for mysite project.
 
@@ -26,9 +38,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h%)01+u_cn8pt-qfewqfcs_tn4+=ka1yci#lyfifwvt0b%n39n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://127.0.0.1:8000/en/']
 
 
 # Application definition
@@ -125,6 +137,7 @@ TEMPLATES = [
 
 
 MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
     'cms.middleware.utils.ApphookReloadMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -137,6 +150,7 @@ MIDDLEWARE = [
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.language.LanguageCookieMiddleware'
+    
 ]
 
 INSTALLED_APPS = [
@@ -180,9 +194,8 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_video',
     'mysite',
-    'polls',
-    'polls_cms_integration',
     'jquery'
+    # 'djangocms_forms',
 ]
 
 LANGUAGES = (
@@ -216,7 +229,7 @@ CMS_TEMPLATES = (
     ('sidebar_right.html', 'Sidebar Right')
 )
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = 'DENY'
 
 CMS_PERMISSION = True
 
