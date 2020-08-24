@@ -1,4 +1,4 @@
-@import url("fontawesome-all.min.css");
+@import url("fontawesome-all.min.css"); 
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,600,600italic");
 /*
 	Arcana by HTML5 UP
@@ -1237,6 +1237,7 @@ ul.links {
 #links {
   display: flex !important;
   flex-direction: column !important;
+  margin-bottom: 2em;
 }
 #links a {
   line-height: 2.5em;
@@ -1460,6 +1461,38 @@ button,
   button.small,
   .button.small {
     font-size: 0.8em; }
+
+.subscribe .alert {
+  vertical-align: baseline;
+color: #222;
+font: normal 14px/20px Helvetica,Arial,sans-serif;
+text-align: left;
+text-decoration: none;
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+border: none;
+outline: 0;
+list-style-type: none;
+list-style-image: none;
+position: fixed;
+top: 50%;
+left: 50%;
+overflow: hidden;
+z-index: 9999999;
+border-radius: 5px;
+background: #fff;
+box-shadow: 0 0 20px rgba(0,0,0,.5);
+user-select: none;
+transition: transform 150ms,opacity 150ms,-webkit-transform 150ms;
+opacity: 1;
+transform: translate3d(0,0,0);
+display: block;
+width: 850px;
+height: 400px;
+margin-left: -425px;
+margin-top: -200px;
+}
 
 /* Box */
 .box.highlight {

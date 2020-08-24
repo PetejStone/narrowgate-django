@@ -1,4 +1,5 @@
 import os  # isort:skip
+
 gettext = lambda s: s
 DATA_DIR = os.path.dirname(os.path.dirname(__file__))
 """
@@ -182,7 +183,8 @@ INSTALLED_APPS = [
     'mysite',
     'polls',
     'polls_cms_integration',
-    'jquery'
+    'jquery',
+    # 'djangocms_forms',
 ]
 
 LANGUAGES = (

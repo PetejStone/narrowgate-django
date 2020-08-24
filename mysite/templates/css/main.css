@@ -1489,7 +1489,9 @@ button,
     width: 1.9rem;
     float: right;
     transform: translateY(-98px);
-    opacity: .6; }
+    opacity: .6; 
+    background-color: #000;
+  }
 
 #nav {
   cursor: default;

@@ -15,12 +15,14 @@ admin.autodiscover()
 urlpatterns = [
     url(r'^sitemap\.xml$', sitemap,
         {'sitemaps': {'cmspages': CMSSitemap}}),
+    # url(r'^', include('djangocms_forms.urls'))
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += i18n_patterns(
     url(r'^admin/', admin.site.urls),  # NOQA
     url(r'^polls/', include('polls.urls')),
     url(r'^', include('cms.urls')),
+   
 )
 
 # This is only needed when using runserver.
